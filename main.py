@@ -244,7 +244,7 @@ class Bot(BaseBot):
       try:
          user_input = None
          print(f"{user.username} said: {message}")     
-         if message.lower().startswith("-announce ") and user.username.lower() in moderators::
+         if message.lower().startswith("-announce ") and user.username.lower() in moderators:
            parts = message.split()
            self.should_stop = None
            if len(parts) >= 3:
