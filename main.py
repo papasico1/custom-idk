@@ -439,7 +439,7 @@ class Bot(BaseBot):
                         await self.highrise.chat(f"Congratulations! {user_name}you been given a \n🎫 Permanent vip ticket 🎫 \n ____________________________\nUse the key -vip or -v to teleport")
 
                 elif message.lower().startswith("-give") and message.lower().endswith("mod"):   
-                  if user.username.lower() in owners :
+                  if user.username.lower() in moderators :
                      await self.highrise.chat(f"{user_name} is now a Permanent MOD, given by {user.username}")
                      if user_name.lower() not in self.moderators:
                            self.moderators.append(user_name)
