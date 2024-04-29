@@ -244,7 +244,7 @@ class Bot(BaseBot):
       try:
          user_input = None
          print(f"{user.username} said: {message}")     
-         if message.lower().startswith("-announce "):
+         if message.lower().startswith("-announce ") and user.username.lower() in moderators::
            parts = message.split()
            self.should_stop = None
            if len(parts) >= 3:
@@ -252,7 +252,7 @@ class Bot(BaseBot):
                await self.highrise.chat("Alright i will loop this message with intervals of 60 seconds.")
                await self.announce(user_input,message)
          if message.lower().startswith("-clear") :
-            if user.username.lower() in self.moderators:
+            if user.username.lower() in moderators:
                await self.highrise.chat (f"Announcement message cleared")
                self.stop_announce()
                return
@@ -379,7 +379,7 @@ class Bot(BaseBot):
           await self.highrise.send_whisper(user.id,"\n• loops\n ____________________________\nMention loop before the emote numer\n ____________________________")
          if message.lower().lstrip().startswith(("!admin","-admin")):
            if user.username.lower() in moderators :
-             await self.highrise.send_whisper(user.id,"\n____________________________\n• Give mod & vip :\n-give @ mod \n-give @ mod 24h\n-give @ vip 🎫 \n• Remove mod\n-remove @ mod ____________________________")
+             await self.highrise.send_whisper(user.id,"\n____________________________\n• Give mod & vip :\n-give @ mod \n-give @ mod 24h\n-give @ vip 🎫 \n• Remove mod\n-remove @ mod\n• Advertising\n-announce + text\n-clear\n ____________________________")
            else:
               await self.highrise.send_whisper(user.id,"Only Admins are eligie.")  
              
