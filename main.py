@@ -358,7 +358,7 @@ class Bot(BaseBot):
         
         
          if message == "!tip5":
-              if user.username in owners:
+              if user.username.lower() in owners:
                 roomUsers = (await self.highrise.get_room_users()).content
                 for roomUser, _ in roomUsers:
                   await self.highrise.tip_user(roomUser.id, "gold_bar_5")
@@ -366,7 +366,7 @@ class Bot(BaseBot):
                 await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
 
          if message == "!tip1":
-              if user.username in owners:
+              if user.username.lower() in owners:
                 roomUsers = (await self.highrise.get_room_users()).content
                 for roomUser, _ in roomUsers:
                   await self.highrise.tip_user(roomUser.id, "gold_bar_1")
