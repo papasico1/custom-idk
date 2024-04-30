@@ -21,11 +21,11 @@ class WebServer():
 
 
 class RunBot():
-  room_id = "65b6158b2ba06c8f8a5f8368"
-  bot_token = "9ed617fed9a2d685221d3cae396b149a5047e4fd11381dd746c736f0f0be0d0b"
+  room_id = "661e53a4ee97aa376961114b"
+  bot_token = "987f841ee73fbb5f651496b3aa2c7f7ce208aacd653a0c4e4cef12a644982bf4"
   bot_file = "main"
   bot_class = "Bot"
-
+  
   def __init__(self) -> None:
     self.definitions = [
         BotDefinition(
