@@ -732,7 +732,7 @@ class Bot(BaseBot):
               if receiver.id == Counter.bot_id:    
                  sender_username = sender.username.lower()
                  if sender_username not in self.membership:
-                   self.membership.append(user_name)
+                   self.membership.append(sender_username)
                    self.save_membership()
                    await self.highrise.chat(f"Thank you {sender_username} for purchasing Permeant vip ticket , you teleport to the vip now \n!vip or !v : to go vip place🎫 . \n!g:Ground floor") 
 
