@@ -188,7 +188,7 @@ class Bot(BaseBot):
      try:
 
          await self.highrise.send_whisper(user.id,f"\n ____________________________\nHello {user.username}\n  Welcome to<#f1a31c>La Divorcio <#f6f6f6>\n ____________________________\n•!buy or -buy \nFor vip \n•!list or -list\nTo discover our room.\n ____________________________\n")
-         await self.highrise.send_whisper(user.id,f"\n ____________________________\nHola {user.username}\n Bienvenido a<#f1a31c>La Divorcio <#f6f6f6>\n ____________________________\n•!but o -buy \nPara vip \n•!list o -list\nPara descubrir nuestra habitación.\n ____________________________\n")
+         await self.highrise.send_whisper(user.id,f"\n ____________________________\nHola {user.username}\n Bienvenido a<#f1a31c>La Divorcio <#f6f6f6>\n ____________________________\nEntras soltero sales casado!    Para Vip Tip en la jarita de propinas 50g para comandos de ayuda escribe !help !list\n ____________________________\n")
          await self.highrise.send_emote('emote-salute')
      
      except Exception as e:
