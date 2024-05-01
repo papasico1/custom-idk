@@ -363,9 +363,12 @@ class Bot(BaseBot):
                 await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
          if message.startswith("❤️ all"):
              if user.username.lower() in self.moderators:
-                 roomUsers = (await self.highrise.get_room_users()).content
-                 for roomUser, _ in roomUsers:
-                      await self.highrise.react("heart", roomUser.id)
+                try:
+                    roomUsers = (await self.highrise.get_room_users()).content
+                    for roomUser, _ in roomUsers:
+                       await self.highrise.react("heart", roomUser.id)
+                except Exception as e:
+                   print(f"An exception occured: {e}")
          if message == "!tip1":
               if user.username.lower() in owners:
                 roomUsers = (await self.highrise.get_room_users()).content
@@ -489,7 +492,7 @@ class Bot(BaseBot):
                 await self.highrise.teleport(f"{user.id}", Position(17, 11,7.5))          
             else:
              await self.highrise.send_whisper((user.id)," this is a privet place for VIPs , uou can use it by purchaseing VIP Ticket type -buy")
-         if message.lower().startswith(('!loor2','!2')):
+         if message.lower().startswith(('!foor2','!2')):
               parts = message.split()
               if len(parts) == 1:
                  await self.highrise.teleport(f"{user.id}", Position(11,11,3))
@@ -660,7 +663,7 @@ class Bot(BaseBot):
         pass
     async def on_whisper(self, user: User, message: str ) -> None:
 
-        if message == "here":
+        if message == "/here":
             if user.username.lower() in self.moderators:
                 response = await self.highrise.get_room_users()
                 users = [content for content in response.content]
@@ -713,10 +716,10 @@ class Bot(BaseBot):
                 await self.highrise.chat(f"hey {target_username}.")
             
                 await self.follow_user(target_username)
-        elif message.lower() == "stop following":
+        elif message.lower() == "/stop following":
             self.following_username = None
           
-            await self.highrise.walk_to(Position(16,0,1.5,"FrontLeft"))
+            await self.highrise.walk_to(Position(15.5,0,17.5,"FrontLeft"))
 
   
   
