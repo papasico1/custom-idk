@@ -659,7 +659,19 @@ class Bot(BaseBot):
      except ValueError:
         pass
     async def on_whisper(self, user: User, message: str ) -> None:
-
+        if message.lower().startswith("-announce ") : 
+           if user.username.lower() in owners:
+              parts = message.split()
+              self.should_stop = None
+              if len(parts) >= 3:
+                 user_input =  message[len("-announce "):]
+                 await self.highrise.chat("Alright i will loop this message with intervals of 60 seconds.")
+                 await self.announce(user_input,message)
+       if message.lower().startswith("-clear") and user.username.lower() in owners :
+            if user.username.lower() in self.moderators:
+               await self.highrise.chat (f"Announcement message cleared")
+               self.stop_announce()
+               return
         if message == "/here":
             if user.username.lower() in self.moderators:
                 response = await self.highrise.get_room_users()
