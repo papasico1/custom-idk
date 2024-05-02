@@ -187,8 +187,8 @@ class Bot(BaseBot):
 
      try:
 
-         await self.highrise.send_whisper(user.id,f"\n ____________________________\nHello {user.username}\n  Welcome to<#f1a31c>La Divorcio <#f6f6f6>\n ____________________________\n•!buy or -buy \nFor vip \n•!list or -list\nTo discover our room.\n ____________________________\n")
-         await self.highrise.send_whisper(user.id,f"Hola {user.username}\n Bienvenido a<#f1a31c>La Divorcio <#f6f6f6>\n ____________________________\nEntras soltero sales casado!Para Vip Tip en la jarita de propinas 50g para comandos de ayuda escribe !help !list")
+         await self.highrise.send_whisper(user.id,f"\n ____________________________\nHello {user.username}\n  Welcome to The Club \n ____________________________\n•!buy or -buy \nFor vip \n•!list or -list\nTo discover our room.\n ____________________________\n")
+       
          await self.highrise.send_emote('emote-salute')
      
      except Exception as e:
@@ -375,10 +375,9 @@ class Bot(BaseBot):
                 await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
 
          if message.lower().lstrip().startswith(("-emotes", "!emotes")):
-                await self.highrise.send_whisper(user.id, "\n• Emote can be used by NUMBERS\n ____________________________\nEl gesto puede ser utilizado por NUMBERS.")
-                await self.highrise.send_whisper(user.id, "\n• For loops say -loop or !loop then the emote number.\n ____________________________\nPara los bucles, diga -loop o !loop y luego el número de emoticono.")  
+                await self.highrise.send_whisper(user.id, "n ____________________________\n• Emote can be used by NUMBERS\n• For loops say -loop or !loop then the emote number.\n ____________________________\n")
          if message.lower().lstrip().startswith(("!loops","-loops")):
-          await self.highrise.send_whisper(user.id,"\n• loops (Bucles)\n ____________________________\nMention loop before the emote numer\n ____________________________\nMenciona loop antes del número del emoticono")
+          await self.highrise.send_whisper(user.id,"\n• loops \n ____________________________\nMention loop before the emote numer\n ____________________________\n")
          if message.lower().lstrip().startswith(("!admin","-admin")):
            if user.username.lower() in owners :
              await self.highrise.send_whisper(user.id,"\n____________________________\n• Give mod & vip :\n-give @ mod \n-give @ mod 24h\n-give @ vip 🎫 \n• Remove mod\n-remove @ mod \n• Promoting\n-announce + text\n-clear announcment\n____________________________")
@@ -388,18 +387,17 @@ class Bot(BaseBot):
          
 
          if message.lower().lstrip().startswith(("-list", "!list", "!help")):
-                await self.highrise.chat("Commands you can use:\n• !teleport or -teleport \n• !rules or -rules\n• -buy or !buy for \n 🎫VIP Tickets🎫\n• !mod or -mod (Only mods)\n• !admin or -admin (Only admins)\n• !loops or -loops\n• !emotes or -emotes\n____________________________\n")
-                await self.highrise.chat("Comandos que puedes usar:\n• !teleport o -teleport \n• !rules or -rules\n• -buy o !buy for \n 🎫VIP Ticketsn• !mod or -mod (Solo mods)\n• !admin o -admin (Solo administradores🎫)\n• !loops or -loops\n• !emotes or -emotes\n____________________________\n")
+                await self.highrise.chat("Commands you can use:\n• !teleport or -teleport \n• !rules or -rules\n• -buy or !buy for \n 🎫VIP Tickets🎫\n• !mod or -mod (Only mods)\n• !admin or -admin (Only admins)\n• !loops or -loops\n• !emotes or -emotes\n____________________________\n")            
          if message.lower().lstrip().startswith(("-buy" , "!buy")):
              await self.highrise.chat(f"\nvip = 50g for permeant vip 🎫 \nTip 50 to bot you will be aceessed to use teleport command.\n____________________________\nvip = 50g para permean vip 🎫 \nTip 50 al bot se le accederá a usar el comando de teletransporte.")
         
          
          if message.lower().lstrip().startswith(("-teleport", "!teleport")):
                     await self.highrise.chat(f"\n • Teleports\n ____________________________\n!g or !floor1: Ground floor \n!floor2 or !2 :Second floor  \n!vip or !v : (vip only), make sure you have 🎫VIP Tickets 🎫 \n• type -buy or !buy for details\n ____________________________\n")
-                    await self.highrise.chat(f"\n •Telepuertos\n ____________________________\n!g o !floor1: Planta baja \n!floor2 o !2 :Segundo piso \n!vip o !v : (solo vip), asegúrese de tener 🎫entradas 🎫 VIP \n• escriba -buy o !buy para obtener más detalless\n ____________________________\n")
+                
          if message.lower().lstrip().startswith(("!rules", "-rules")):
-           await self.highrise.chat(f"\n\n        RULES\n ____________________________\n 1. NO UNDERAGE \n 2. No advertising\n 3. No hate speech \n 4. No begging (those trash will be immediately banned 🚫) \n 5. No spamming\n ____________________________\n")
-           await self.highrise.chat(f"\n\n        RULES\n ____________________________\n1. NO SER MENOR DE EDAD N 2. Sin publicidadn 3. No a la incitación al odio n 4. No mendigar (esa basura será prohibida 🚫 inmediatamente) n 5. Sin spam\n ____________________________\n")
+           await self.highrise.chat(f"\n\n        RULES\n ____________________________\n 1. NO UNDERAGE \n 2. No hate speech \n 3. No begging (those trash will be immediately banned 🚫) \n 4. No spamming\n ____________________________\n")
+          
 
          if user.username.lower() in self.moderators:
             if message.lower().lstrip().startswith(("-mod","!mod")):
