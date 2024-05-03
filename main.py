@@ -58,8 +58,8 @@ class Bot(BaseBot):
         #dance floor position
         min_x = 5
         max_x = 11
-        min_y = 13
-        max_y = 19
+        min_y = 19
+        max_y = 24
         min_z = 0
         max_z = 1
 
