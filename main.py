@@ -56,12 +56,12 @@ class Bot(BaseBot):
         #conversation id var
         self.convo_id_registry = []
         #dance floor position
-        min_x = 50
-        max_x = 50
-        min_y = 750
-        max_y = 50
-        min_z = 50
-        max_z = 50
+        min_x = 5
+        max_x = 11
+        min_y = 13
+        max_y = 19
+        min_z = 0
+        max_z = 1
 
         self.dance_floor_pos = [(min_x, max_x, min_y, max_y, min_z, max_z)]
 
@@ -670,6 +670,25 @@ class Bot(BaseBot):
                await self.highrise.chat (f"Announcement message cleared")
                self.stop_announce()
                return
+        if message == "!tip5":
+              if user.username.lower() in owners:
+                roomUsers = (await self.highrise.get_room_users()).content
+                for roomUser, _ in roomUsers:
+                  await self.highrise.tip_user(roomUser.id, "gold_bar_5")
+              else: 
+                await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
+         if message.startswith("❤️ all"):
+             if user.username.lower() in self.moderators:
+                    roomUsers = (await self.highrise.get_room_users()).content
+                    for roomUser, _ in roomUsers:
+                       await self.highrise.react("heart", roomUser.id)
+         if message == "!tip1":
+              if user.username.lower() in owners:
+                roomUsers = (await self.highrise.get_room_users()).content
+                for roomUser, _ in roomUsers:
+                  await self.highrise.tip_user(roomUser.id, "gold_bar_1")
+              else: 
+                await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
         if message == "/here":
             if user.username.lower() in self.moderators:
                 response = await self.highrise.get_room_users()
