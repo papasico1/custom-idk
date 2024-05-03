@@ -56,12 +56,12 @@ class Bot(BaseBot):
         #conversation id var
         self.convo_id_registry = []
         #dance floor position
-        min_x = 5
-        max_x = 11
-        min_y = 19
-        max_y = 24
+        min_x = 4.5
+        max_x = 10.5
+        min_y = 13.5
+        max_y = 19.5
         min_z = 0
-        max_z = 1
+        max_z = 2
 
         self.dance_floor_pos = [(min_x, max_x, min_y, max_y, min_z, max_z)]
 
