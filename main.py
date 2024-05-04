@@ -796,12 +796,6 @@ class Bot(BaseBot):
             # If not in any dance floor area
             if user.id in self.dancer:
                 self.dancer.remove(user.id)
-
-
-
-        print(f"{user.username}: {pos}")
-
-   
           
   
     
