@@ -58,10 +58,10 @@ class Bot(BaseBot):
         #dance floor position
         min_x = 4.5
         max_x = 10.5
-        min_y = 13.5
-        max_y = 19.5
-        min_z = 0
-        max_z = 2
+        min_y = 0
+        max_y = 1
+        min_z = 13.5
+        max_z = 19.5
 
         self.dance_floor_pos = [(min_x, max_x, min_y, max_y, min_z, max_z)]
 
