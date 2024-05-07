@@ -432,7 +432,7 @@ class Bot(BaseBot):
                   if user.username.lower() in self.moderators:
                      await self.highrise.teleport(user_id, Position(17, 11,7.5))
 
-                if message.startswith("-g") and len(args)  = 1:   
+                if message.startswith("-g") and len(args)  == 1:   
                    if user.username.lower() in self.moderators:
                       await self.highrise.teleport(user_id, Position(15,0,17.5))
               
