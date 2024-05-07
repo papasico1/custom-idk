@@ -432,7 +432,7 @@ class Bot(BaseBot):
                   if user.username.lower() in self.moderators:
                      await self.highrise.teleport(user_id, Position(17, 11,7.5))
 
-                if message.startswith("-g"):   
+                if message.startswith("-g") and len(args)  = 1:   
                    if user.username.lower() in self.moderators:
                       await self.highrise.teleport(user_id, Position(15,0,17.5))
               
@@ -701,9 +701,12 @@ class Bot(BaseBot):
                 await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
         if message.startswith("❤️ all"):
              if user.username.lower() in self.moderators:
+                try:
                     roomUsers = (await self.highrise.get_room_users()).content
                     for roomUser, _ in roomUsers:
                        await self.highrise.react("heart", roomUser.id)
+                except Exception as e:
+                  print(f"An exception occured: {e}")
         if message == "!tip1":
               if user.username.lower() in owners:
                 roomUsers = (await self.highrise.get_room_users()).content
