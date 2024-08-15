@@ -18,7 +18,7 @@ from highrise.__main__ import *
 import asyncio, random
 from emotes import Emotes
 from emotes import Dance_Floor
-owners = ['jabzael','alionardo_']
+owners = ['Bellako_Flow','EnDiosa']
 
 class BotDefinition:
     
@@ -32,7 +32,7 @@ class BotDefinition:
 class Counter:
     bot_id = ""
     static_ctr = 0
-    usernames = ['Alionardo_']
+    usernames = ['Bellako_Flow']
 
 class Bot(BaseBot):
     continuous_emote_tasks: Dict[int, asyncio.Task[Any]] = {}  
@@ -92,7 +92,7 @@ class Bot(BaseBot):
             self.moderators = []
 
         # Add default moderators here
-        default_moderators = ['alionardo_']
+        default_moderators = ['Bellako_Flow']
         for mod in default_moderators:
             if mod.lower() not in self.moderators:
                 self.moderators.append(mod.lower())
@@ -187,7 +187,7 @@ class Bot(BaseBot):
 
      try:
 
-         await self.highrise.send_whisper(user.id,f"\n ____________________________\nHello {user.username}\n  Welcome to The Club \n ____________________________\n•!buy or -buy \nFor vip \n•!list or -list\nTo discover our room.\n ____________________________\n")
+         await self.highrise.send_whisper(user.id,f"\n ____________________________\nHello {user.username}\n  Welcome to 10Grabs \n ____________________________\n•!buy or -buy \nFor vip \n•!list or -list\nTo discover our room.\n ____________________________\n")
        
          await self.highrise.send_emote('emote-salute')
      
@@ -372,7 +372,7 @@ class Bot(BaseBot):
                 for roomUser, _ in roomUsers:
                   await self.highrise.tip_user(roomUser.id, "gold_bar_1")
               else: 
-                await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
+                await  self.highrise.send_whisper(user.id, f"Only Bellako_Flow can use tip!")
 
          if message.lower().lstrip().startswith(("-emotes", "!emotes")):
                 await self.highrise.send_whisper(user.id, "n ____________________________\n• Emote can be used by NUMBERS\n• For loops say -loop or !loop then the emote number.\n ____________________________\n")
@@ -413,7 +413,7 @@ class Bot(BaseBot):
             args = parts[1:]
 
             if len(args) < 1:
-                await self.highrise.send_whisper(user.id, f"Usage !{parçalar[0]} <@Alionardo_>")
+                await self.highrise.send_whisper(user.id, f"Usage !{parçalar[0]} <@Bellako_Flow>")
                 return
             elif args[0][0] != "@":
                 await self.highrise.send_whisper(user.id, "Invalid user format. Please use '@username'.")
