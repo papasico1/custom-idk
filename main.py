@@ -360,7 +360,7 @@ class Bot(BaseBot):
                 for roomUser, _ in roomUsers:
                   await self.highrise.tip_user(roomUser.id, "gold_bar_5")
               else: 
-                await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
+                await  self.highrise.send_whisper(user.id, f"Only _kilito can use tip!")
          if message.startswith("❤️ all"):
              if user.username.lower() in self.moderators:
                     roomUsers = (await self.highrise.get_room_users()).content
