@@ -18,7 +18,7 @@ from highrise.__main__ import *
 import asyncio, random
 from emotes import Emotes
 from emotes import Dance_Floor
-owners = ['Bellako_Flow','EnDiosa']
+owners = ['Jabza','EnDiosa']
 
 class BotDefinition:
     
@@ -32,7 +32,7 @@ class BotDefinition:
 class Counter:
     bot_id = ""
     static_ctr = 0
-    usernames = ['Bellako_Flow']
+    usernames = ['Jabza']
 
 class Bot(BaseBot):
     continuous_emote_tasks: Dict[int, asyncio.Task[Any]] = {}  
@@ -360,7 +360,7 @@ class Bot(BaseBot):
                 for roomUser, _ in roomUsers:
                   await self.highrise.tip_user(roomUser.id, "gold_bar_5")
               else: 
-                await  self.highrise.send_whisper(user.id, f"Only _CAP0_ can use tip!")
+                await  self.highrise.send_whisper(user.id, f"Only _Kilito can use tip!")
          if message.startswith("❤️ all"):
              if user.username.lower() in self.moderators:
                     roomUsers = (await self.highrise.get_room_users()).content
@@ -413,7 +413,7 @@ class Bot(BaseBot):
             args = parts[1:]
 
             if len(args) < 1:
-                await self.highrise.send_whisper(user.id, f"Usage !{parçalar[0]} <@Bellako_Flow>")
+                await self.highrise.send_whisper(user.id, f"Usage !{parçalar[0]} <@Jabza")
                 return
             elif args[0][0] != "@":
                 await self.highrise.send_whisper(user.id, "Invalid user format. Please use '@username'.")
